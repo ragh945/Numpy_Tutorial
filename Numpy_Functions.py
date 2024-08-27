@@ -5,6 +5,13 @@ import matplotlib.pyplot as plt
 Numpy=Image.open("Numpylgo.jpg")
 st.image(Numpy,use_column_width=True)
 
+def plot_image():
+    fig, ax = plt.subplots()
+    ax.imshow(plt.imread("Inno.png"))
+    ax.axis('off')
+    st.pyplot(fig)
+
+
 # Set the title
 st.title("A Deep Dive into NumPy: Functions Explained with Examples")
 
@@ -263,7 +270,7 @@ examples = {
         "syntax": "plt.imshow(X, cmap=None)",
         "description": "Displays an image represented by an array.",
         "example_code": 'plt.imshow(plt.imread("Inno.png"))',
-        "example": lambda: plt.imshow(plt.imread("Inno.png"))
+        "example":plot_image
     },
     "np.imread": {
         "syntax": "plt.imread(fname)",
