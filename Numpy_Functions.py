@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
-Numpy=Image.open(r"C:\Users\RAGHAVENDRA KUMAR\Downloads\Numpylgo.jpg")
+Numpy=Image.open("Numpylgo.jpg")
 st.image(Numpy,use_column_width=True)
 
 # Set the title
