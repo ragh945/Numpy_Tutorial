@@ -10,13 +10,15 @@ st.title("A Deep Dive into NumPy: Functions Explained with Examples")
 
 # Dropdown menu for NumPy functions
 functions_list = [
-    "np.flatten", "np.ravel", "np.where", "np.concat", "np.vstack", "np.hstack",
+    "np.flatten", "np.ravel", "np.where", "np.concatenate", "np.vstack", "np.hstack",
     "np.sum", "np.prod", "np.pow", "np.cumsum", "np.cumprod", "np.nansum", "np.nanprod",
     "np.shape", "np.ndim", "np.seed", "np.floor", "np.ceil", "np.max", "np.min", "np.var",
     "np.mean", "np.median", "np.percentile", "np.argmin", "np.argmax", "np.newaxis",
     "np.reshape", "Array Broadcasting", "Logarithmic Functions", "np.choice", "np.imshow",
     "np.imread", "np.quantile", "np.any", "np.all", "np.eye", "np.diag", "np.full", "np.dot",
-    "np.matrix", "np.linalg.inv", "np.linalg.det", "np.transpose", "Trigonometric Functions"
+    "np.matrix", "np.linalg.inv", "np.linalg.det", "np.transpose", "Trigonometric Functions","np.apply_along_axis",
+    "np.char.upper","np.char.lower","np.char.title","np.char.capitalize","np.char.split","np.char.strip",
+    "np.char.join","np.exp","np.std"
 ]
 
 selected_function = st.selectbox("Select a NumPy function to learn about:", functions_list)
@@ -340,6 +342,67 @@ examples = {
         "description": "Computes the trigonometric sine, cosine, and tangent of array elements.",
         "example_code": "np.sin(np.pi/2), np.cos(0), np.tan(np.pi/4)",
         "example": lambda: (np.sin(np.pi/2), np.cos(0), np.tan(np.pi/4))
+    },
+    "np.apply_along_axis": {
+        "syntax": "np.apply_along_axis(funcid,axis,arr)",
+        "description": "np.apply_along_axis() allows you to apply a function along the specified axis of a NumPy array",
+        "example_code": "np.apply_along_axis(lambda x:x**2,axis=0,arr=np.arange(1,6))",
+        "example": lambda: np.apply_along_axis(lambda x:x**2,axis=0,arr=np.arange(1,6))
+    },
+    "np.char.upper": {
+        "syntax": "np.char.upper(a)",
+        "description": "Converts all characters in each string to uppercase.",
+        "example_code": 'np.char.upper(np.array(["raghu","Rohan","RoHit","Rahul"]))',
+        "example": lambda: np.char.upper(np.array(["raghu","Rohan","RoHit","Rahul"]))
+    },
+    "np.char.lower": {
+        "syntax": "np.char.upper(a)",
+        "description": "Converts all characters in each string to lowercase",
+        "example_code": 'np.char.lower(np.array(["raghu","Rohan","RoHit","Rahul"]))',
+        "example": lambda: np.char.lower(np.array(["raghu","Rohan","RoHit","Rahul"]))
+    },
+    "np.char.title": {
+        "syntax": "np.char.title(a)",
+        "description": "Converts the first character of each word to uppercase and all other characters to lowercase.",
+        "example_code": 'np.char.title(np.array(["raghu","Rohan","RoHit","Rahul"]))',
+        "example": lambda: np.char.title(np.array(["raghu","Rohan","RoHit","Rahul"]))
+    },
+    "np.char.capitalize": {
+        "syntax": "np.char.title(a)",
+        "description": "Converts the first character of each string to uppercase and all other characters to lowercase",
+        "example_code": 'np.char.capitalize(np.array(["raghu","Rohan","RoHit","Rahul"]))',
+        "example": lambda: np.char.capitalize(np.array(["raghu","Rohan","RoHit","Rahul"]))
+    },
+    "np.char.split": {
+        "syntax": "np.char.split(a,sep=None)",
+        "description": "Splits each string into a list of substrings based on a delimiter",
+        "example_code": 'np.char.split(np.array([" Python "," SQL "," ML "," DL "]),sep=" ")',
+        "example": lambda: np.char.split(np.array([" Python "," SQL "," ML "," DL "]),sep=" ")
+    
+    },
+    "np.char.strip": {
+        "syntax": "np.char.strip(a)",
+        "description": "Removes leading and trailing whitespace from each string.",
+        "example_code": 'np.char.strip(np.array([" Python "," SQL "," ML "," DL "]))',
+        "example": lambda: np.char.strip(np.array([" Python "," SQL "," ML "," DL "]))
+    },
+    "np.char.join": {
+        "syntax": "np.char.join(sep,a)",
+        "description": "Joins elements of a list of strings with a specified delimiter",
+        "example_code": 'np.char.join("_",np.array([" Python "," SQL "," ML "," DL "]))',
+        "example": lambda: np.char.join("_",np.array([" Python "," SQL "," ML "," DL "]))
+    },
+    "np.exp": {
+        "syntax": "np.exp(a)",
+        "description": "This function computes the exponential of each element in the input array x. The exponential function calculates � � e x , where � e is Euler's number (approximately 2.71828)",
+        "example_code": 'np.exp(np.array[1,3,4,6])',
+        "example": lambda: np.exp(np.array([1,3,4,6]))
+    },
+    "np.std": {
+        "syntax": "np.std(a)",
+        "description": "This function computes the standard deviation of the input array.",
+        "example_code": 'np.std(np.array[1,3,4,6])',
+        "example": lambda: np.std(np.array([1,3,4,6]))
     }
 }
 
