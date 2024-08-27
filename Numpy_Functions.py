@@ -262,8 +262,8 @@ examples = {
     "np.imshow": {
         "syntax": "plt.imshow(X, cmap=None)",
         "description": "Displays an image represented by an array.",
-        "example_code": "plt.imshow(np.random.rand(10, 10))",
-        "example": lambda: plt.imshow(np.random.rand(10, 10)) or plt.show()
+        "example_code": "plt.imshow(plt.imread("Inno.png"))",
+        "example": lambda: plt.imshow(plt.imread("Inno.png"))
     },
     "np.imread": {
         "syntax": "plt.imread(fname)",
