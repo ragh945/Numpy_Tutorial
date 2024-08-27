@@ -262,7 +262,7 @@ examples = {
     "np.imshow": {
         "syntax": "plt.imshow(X, cmap=None)",
         "description": "Displays an image represented by an array.",
-        "example_code": "plt.imshow(plt.imread("Inno.png"))",
+        "example_code": 'plt.imshow(plt.imread("Inno.png"))',
         "example": lambda: plt.imshow(plt.imread("Inno.png"))
     },
     "np.imread": {
